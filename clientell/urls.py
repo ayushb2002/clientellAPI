@@ -24,11 +24,11 @@ urlpatterns = [
     path('api/', include('api.urls')),
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    re_path(r'^media/(?P<path>.*)$', serve,
-            {'document_root':       settings.MEDIA_ROOT}),
-    re_path(r'^static/(?P<path>.*)$', serve,
-            {'document_root': settings.STATIC_ROOT}),
+    # re_path(r'^media/(?P<path>.*)$', serve,
+    #         {'document_root':       settings.MEDIA_ROOT}),
+    # re_path(r'^static/(?P<path>.*)$', serve,
+    #         {'document_root': settings.STATIC_ROOT}),
 ]
 
-urlpatterns = urlpatterns + \
-    static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# urlpatterns = urlpatterns + \
+#     static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
