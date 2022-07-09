@@ -9,12 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-from pathlib import Path
-import environ
-import whitenoise
 import os
-env = environ.Env()
-environ.Env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 #BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -89,12 +84,12 @@ DATABASES = {
     'salesforce': {
         'ENGINE': 'salesforce.backend',
         # 'client_id'   in OAuth2 terminology
-        'CONSUMER_KEY': env('CLIENT_ID'),
+        'CONSUMER_KEY': '3MVG9pRzvMkjMb6mzmTGES2xCuzah2ZLsa4mrMhvWAwqvYMA63A.xg5sU7nKw8sLm7CO3y5tA1UrTShBnrJTd',
         # 'client_secret'
-        'CONSUMER_SECRET': env('CLIENT_SECRET'),
-        'USER': env('SALESFORCE_USERNAME'),
-        'PASSWORD': env('SALESFORCE_PASSWORD'),
-        'HOST': env('HOST'),
+        'CONSUMER_SECRET': '153D2FF33316A59B85083F3F2754CB4C6D5C34CB5957CCCC3F25D6553DFEF6F1',
+        'USER': 'ruthuparna1998@gmail.com',
+        'PASSWORD': 'clientell123',
+        'HOST': 'https://clientell3-dev-ed.my.salesforce.com',
     }
 }
 
