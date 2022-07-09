@@ -1,0 +1,33 @@
+{% extends 'home/docsBase.html' %}
+
+{% block title %}
+Documentation | Opportunity
+{% endblock title %}
+
+{% block body %}
+<div class="row">
+    <div class="col-12 text-center pt-3">
+        <h1 class="text-primary fw-bolder">Opportunity!</h1>
+    </div>
+    <div class="col-12 text-center p-5">
+        <p class="fs-5">
+            <samp>
+                The <code>`Opportunity`</code> table has mainly 5 fields which are <code>`id`, `name`, `amount`,
+                    `account` and `owner`</code>. The <code>APIView</code> returns at maximum 10 rows from the table in
+                form of JSON for the users to view and for developers to integrate with their projects. The links to
+                access the opportunity table are set in syntax </samp></p>
+            <pre class="bg-light p-2 fw-bold">`{{link}}/api/opportunity/{page-number}`</pre>
+        
+        <p class="fs-5">
+            <samp>
+                The pagination links are provided at the end of the objects with keys <code>`previous-page`</code> and
+                <code>`next-page`</code>. These page links are adjusted with help of <code>`request`</code> object from
+                django using method <kbd>build_absolute_uri()</kbd> and conditioning it as per limit of objects per
+                page.
+                <br><br>
+                Each object is returned with it's number in display order as the key of the JSON dictionary along with a dictionary containing the necessary fields as the value pair of the key.
+            </samp>
+        </p>
+    </div>
+</div>
+{% endblock body %}

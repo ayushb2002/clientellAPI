@@ -1,0 +1,20 @@
+{% extends 'home/docsBase.html' %}
+
+{% block title %}
+Documentation
+{% endblock title %}
+
+{% block body %}
+<div class="row">
+    <div class="col-12 text-center py-3">
+        <h1 class="text-primary fw-bolder">Documentations!</h1>
+    </div>
+    <div class="col-12 text-center p-5">
+        <p class="fs-5">
+            <samp>The 3 tables, namely <code>`Accounts`</code>, <code>`Users`</code> and <code>`Opportunity`</code> have been fetched from salesforce using <kbd>django-salesforce</kbd> library. These tables are then stored to models.py using command <kbd>python manage.py inspectdb --database=salesforce > models.py</kbd>. Then these models were used to create APIViews using <kbd>django-rest framework</kbd> and were given urls in <code>`/api/table-name/page-number`</code> syntax. Salesforce API integration requires 5 tokens, namely <code>`Host`, `Cliend ID`, `Client Secret`, `Username` and `Password`</code>. For development purposes, these keys are hard coded to <kbd>settings.py</kbd> but upon deployment, they are served as environment variables to the server. As the <kbd>django-salesforce</kbd> loads data from <kbd>Salesforce</kbd> database itself, there was no need to develop API endpoint <code>`import`</code>, as every time the API is accessed, django automatically re-imports all the data from the database. Thus the data is never saved locally, which reduces memory requirements.
+          <br><br>
+          Access the links from the side navigation bar to view working of the APIs and the logic and idea behind them!</samp>
+        </p>
+    </div>
+</div>
+{% endblock body %}
